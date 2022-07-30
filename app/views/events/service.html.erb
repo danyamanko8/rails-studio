@@ -1,0 +1,17 @@
+<header>Наші послуги</header>
+<br/>
+<ul>
+<% @events.each do |event| %>
+<li>
+  <strong><%= event.name %></strong>
+   <%= event.location %>:
+  <%= price(event) %>
+</li>
+<p>
+  <%= truncate(event.description, length: 35, separator: ' ') %>
+</p>
+<p>
+  Найближча вільна дата: <%= date_and_time(event) %>
+</p>
+<% end %>
+</ul>
